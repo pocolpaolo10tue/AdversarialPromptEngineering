@@ -19,7 +19,7 @@ def main():
     df, prompt = load_datasets(DATASET_NAME,PROMPT_FILE)
    
     print("=== Clean and limit the dataset ===")
-    df = clean_dataset(df, NUMBER_OF_QUESTIONS, MIN_LENGTH_ANSWER, MAX_LENGTH_QUESTION)
+    df = clean_dataset(df, NUMBER_OF_QUESTIONS, MIN_LENGTH_ANSWER) #, MAX_LENGTH_QUESTION)
 
     print("=== Running AI detector on human text ===")
     df = run_ai_detector(AI_DETECTOR_NAME, df, "answer")
