@@ -24,10 +24,7 @@ def create_question_with_prompt(questions: pd.DataFrame, prompts: pd.DataFrame) 
     combined["question_with_prompt"] = combined["question"] + " " + combined["prompt"]
     return combined
 
-def clean_dataset(df, NUMBER_OF_QUESTIONS, MIN_LENGTH_ANSWER, MAX_LENGTH_QUESTION):
-    mask = (
-        df["answer"].apply(lambda x: isinstance(x, str) and len(x.strip()) >= MIN_LENGTH_ANSWER)
-        & df["question"].apply(lambda x: isinstance(x, str) and len(x.strip()) <= MAX_LENGTH_QUESTION)
-    )
+def clean_dataset(df, NUMBER_OF_QUESTIONS, MIN_LENGTH_ANSWER):
+    mask = df["answer"].apply(lambda x: isinstance(x, str) and len(x.strip()) >= MIN_LENGTH_ANSWER)
     filtered_df = df[mask].head(NUMBER_OF_QUESTIONS).reset_index(drop=True)
     return filtered_df
