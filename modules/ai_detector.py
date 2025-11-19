@@ -38,8 +38,8 @@ def run_binoculars(df, answer_name):
         # Initialize Binoculars with model name/path strings
         # The library handles loading internally
         bino = Binoculars(
-            observer_name_or_path="tiiuae/falcon-rw-1b",
-            performer_name_or_path="tiiuae/falcon-rw-1b",
+            observer_name_or_path="tiiuae/falcon-7b",
+            performer_name_or_path="tiiuae/falcon-7b-instruct",
             use_bfloat16=True, # Use bfloat16 for memory efficiency
             max_token_observed=512
         )
