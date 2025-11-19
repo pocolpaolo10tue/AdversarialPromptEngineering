@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=llama-experiment
+#SBATCH --job-name=run-experiment
 #SBATCH --output=%x_%j.out
 #SBATCH --nodes=1
 #SBATCH --gpus=1
